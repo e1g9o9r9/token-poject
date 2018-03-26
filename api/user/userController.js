@@ -71,10 +71,14 @@ router.post('/delete', passport.authenticate('jwt', {session: false}) ,function(
         console.log(deletedUser);
         deletedUser.remove(function (err, removed) {
             if(err){
-                next(err);
+                res.json({
+                    success: false, msg: "Failed to update user"
+                });
             }
             else{
-                res.json(removed);
+                res.json({
+                    success: true, msg: "User deleted"
+                })
             }
         });
     });

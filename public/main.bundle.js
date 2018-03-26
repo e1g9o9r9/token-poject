@@ -86,6 +86,7 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__guards_auth_guard__ = __webpack_require__("./src/app/guards/auth.guard.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_userActions_update_update_component__ = __webpack_require__("./src/app/components/userActions/update/update.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_user_user_service__ = __webpack_require__("./src/app/services/user/user.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_userActions_all_users_all_users_component__ = __webpack_require__("./src/app/components/userActions/all-users/all-users.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -110,13 +111,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var appRoutes = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__["a" /* HomeComponent */] },
     { path: 'register', component: __WEBPACK_IMPORTED_MODULE_8__components_register_register_component__["a" /* RegisterComponent */] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_7__components_login_login_component__["a" /* LoginComponent */] },
     { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_10__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_15__guards_auth_guard__["a" /* AuthGuard */]] },
     { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_11__components_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_15__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'dashboard/update', component: __WEBPACK_IMPORTED_MODULE_16__components_userActions_update_update_component__["a" /* UpdateComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_15__guards_auth_guard__["a" /* AuthGuard */]] }
+    { path: 'dashboard/update', component: __WEBPACK_IMPORTED_MODULE_16__components_userActions_update_update_component__["a" /* UpdateComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_15__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'dashboard/allUsers', component: __WEBPACK_IMPORTED_MODULE_18__components_userActions_all_users_all_users_component__["a" /* AllUsersComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_15__guards_auth_guard__["a" /* AuthGuard */]] }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -131,7 +134,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__["a" /* HomeComponent */],
                 __WEBPACK_IMPORTED_MODULE_10__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
                 __WEBPACK_IMPORTED_MODULE_11__components_profile_profile_component__["a" /* ProfileComponent */],
-                __WEBPACK_IMPORTED_MODULE_16__components_userActions_update_update_component__["a" /* UpdateComponent */]
+                __WEBPACK_IMPORTED_MODULE_16__components_userActions_update_update_component__["a" /* UpdateComponent */],
+                __WEBPACK_IMPORTED_MODULE_18__components_userActions_all_users_all_users_component__["a" /* AllUsersComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -211,7 +215,7 @@ module.exports = ""
 /***/ "./src/app/components/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<!--<div class=\"jumbotron text-center\">-->\n  <!--<h1>The School App</h1>-->\n  <!--<p class=\"lead\">Welcome to our custom MEAN authentication application built from scratch</p>-->\n  <!--<div>-->\n    <!--<a class=\"btn btn-primary\" [routerLink]=\"['/register']\">Register</a> <a class=\"btn btn-default\" [routerLink]=\"['/login']\">Login</a>-->\n  <!--</div>-->\n<!--</div>-->\n\n<!--<div class=\"row\">-->\n  <!--<div class=\"col-md-4\">-->\n    <!--<h3>Express Backend</h3>-->\n    <!--<p>A rock solid Node.js/Express server using Mongoose to organize models and query the database</p>-->\n  <!--</div>-->\n  <!--<div class=\"col-md-4\">-->\n    <!--<h3>Angular-CLI</h3>-->\n    <!--<p>Angular-CLI to generate components, services and more. Local dev server and easy compilation</p>-->\n  <!--</div>-->\n  <!--<div class=\"col-md-4\">-->\n    <!--<h3>JWT Tokens</h3>-->\n    <!--<p>Full featured authentication using JSON web tokens. Login and store user data</p>-->\n  <!--</div>-->\n<!--</div>-->\n\n<div class=\"jumbotron text-center\">\n  <h1>Привет, дэбилы</h1>\n  <p class=\"lead\">Welcome to our custom MEAN authentication application built from scratch</p>\n  <div>\n    <a class=\"btn btn-primary\" [routerLink]=\"['/register']\">Register</a> <a class=\"btn btn-default\" [routerLink]=\"['/login']\">Login</a>\n  </div>\n</div>\n\n<div class=\"row\">\n  <div class=\"col-md-4\">\n    <h3>Misha</h3>\n    <p>Darov</p>\n  </div>\n  <div class=\"col-md-4\">\n    <h3>Boris</h3>\n    <p>Darov</p>\n  </div>\n  <div class=\"col-md-4\">\n    <h3>Ilya</h3>\n    <p>Darov</p>\n  </div>\n  <div class=\"col-md-4\">\n    <h3>Daniel</h3>\n    <p>Darov</p>\n  </div>\n</div>\n"
+module.exports = "\n<div class=\"jumbotron text-center\">\n  <h1>The School App</h1>\n  <p class=\"lead\">Welcome to our custom MEAN authentication application built from scratch</p>\n  <div>\n    <a class=\"btn btn-primary\" [routerLink]=\"['/register']\">Register</a> <a class=\"btn btn-default\" [routerLink]=\"['/login']\">Login</a>\n  </div>\n</div>\n\n<div class=\"row\">\n  <div class=\"col-md-4\">\n    <h3>Express Backend</h3>\n    <p>A rock solid Node.js/Express server using Mongoose to organize models and query the database</p>\n  </div>\n  <div class=\"col-md-4\">\n    <h3>Angular-CLI</h3>\n    <p>Angular-CLI to generate components, services and more. Local dev server and easy compilation</p>\n  </div>\n  <div class=\"col-md-4\">\n    <h3>JWT Tokens</h3>\n    <p>Full featured authentication using JSON web tokens. Login and store user data</p>\n  </div>\n</div>\n\n"
 
 /***/ }),
 
@@ -559,6 +563,90 @@ var RegisterComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/userActions/all-users/all-users.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/userActions/all-users/all-users.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div  *ngIf=\"users.length > 1\">\n  <h1 class=\"page-header\">All registered user</h1>\n  <table class=\"table table-striped table-hover \">\n  <thead>\n  <tr>\n    <th>#</th>\n    <th>Name</th>\n    <th>Username</th>\n    <th>Email</th>\n    <th>Permission</th>\n    <th></th>\n  </tr>\n  </thead>\n    <tbody>\n    <tr *ngFor=\"let user of users\" class=\"active\">\n      <td>{{users.indexOf(user) + 1}}</td>\n      <td>{{user.name}}</td>\n      <td>{{user.username}}</td>\n      <td>{{user.email}}</td>\n      <td>{{user.permission}}</td>\n      <td><button (click)=\"deleteUser(user)\" class=\"btn btn-default\">Delete user</button></td>\n    </tr>\n    </tbody>\n  </table>\n</div>\n<div  *ngIf=\"!(users.length > 1)\">\n  <h1 class=\"page-header\">Nobody has been registered yet</h1>\n</div>\n\n"
+
+/***/ }),
+
+/***/ "./src/app/components/userActions/all-users/all-users.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AllUsersComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_user_user_service__ = __webpack_require__("./src/app/services/user/user.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var AllUsersComponent = /** @class */ (function () {
+    function AllUsersComponent(userService) {
+        this.userService = userService;
+        this.users = [];
+    }
+    AllUsersComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.userService.getAllUser().subscribe(function (data) {
+            _this.users = data;
+        }, function (err) {
+            console.log(err);
+            return false;
+        });
+    };
+    AllUsersComponent.prototype.deleteUserFromList = function (user) {
+        var index = this.users.indexOf(user);
+        if (index != -1) {
+            this.users.splice(index, 1);
+        }
+    };
+    //
+    AllUsersComponent.prototype.deleteUser = function (user) {
+        console.log(this.users.indexOf(user));
+        //Register user
+        // this.userService.userService(user).subscribe(data => {
+        //   if(data.success){
+        //     this.flashMessage.show('You have been registered and can log in', {cssClass: 'alert-success', timeout: 3000});
+        //     this.router.navigate(['/login']);
+        //   }
+        //   else{
+        //     this.flashMessage.show('Something went wrong', {cssClass: 'alert-danger', timeout: 3000});
+        //   }
+        // });
+    };
+    AllUsersComponent.prototype.getUser = function () {
+        console.log(this.users);
+    };
+    AllUsersComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-all-users',
+            template: __webpack_require__("./src/app/components/userActions/all-users/all-users.component.html"),
+            styles: [__webpack_require__("./src/app/components/userActions/all-users/all-users.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_user_user_service__["a" /* UserService */]])
+    ], AllUsersComponent);
+    return AllUsersComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/userActions/update/update.component.css":
 /***/ (function(module, exports) {
 
@@ -600,8 +688,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+// import {NgForm} from "@angular/forms";
+// import {User} from "../../objects/user";
+// import {forEach} from "@angular/router/src/utils/collection";
 var UpdateComponent = /** @class */ (function () {
-    //isActive: boolean[];
     function UpdateComponent(validateService, flashMessage, authService, router, userService) {
         this.validateService = validateService;
         this.flashMessage = flashMessage;
@@ -769,13 +859,13 @@ var AuthService = /** @class */ (function () {
     AuthService.prototype.registerUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('api/user/register', user, { headers: headers })
+        return this.http.post('http://localhost:3200/api/user/register', user, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.authenticateUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('api/user/authenticate', user, { headers: headers })
+        return this.http.post('http://localhost:3200/api/user/authenticate', user, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.getProfile = function () {
@@ -784,7 +874,7 @@ var AuthService = /** @class */ (function () {
         this.loadToken();
         headers.append('Authorization', this.authToken);
         headers.append('Content-Type', 'application/json');
-        return this.http.get('api/user/profile', { headers: headers })
+        return this.http.get('http://localhost:3200/api/user/profile', { headers: headers })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.loadToken = function () {
@@ -853,8 +943,14 @@ var UserService = /** @class */ (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Authorization', this.authService.getToken());
         headers.append('Content-Type', 'application/json');
-        console.log(headers);
         return this.http.post('api/user/update', user, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    UserService.prototype.getAllUser = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        headers.append('Authorization', this.authService.getToken());
+        headers.append('Content-Type', 'application/json');
+        return this.http.get('http://localhost:3200/api/user/getAllUsers', { headers: headers })
             .map(function (res) { return res.json(); });
     };
     UserService = __decorate([
