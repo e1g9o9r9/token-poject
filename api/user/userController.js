@@ -11,7 +11,7 @@ router.post('/register', function(req, res, next){
         email: req.body.email,
         username: req.body.username,
         password: req.body.password,
-        permission: "user"
+        permission: "admin"
     });
     User.addOrUpdateUser(newUser, function(err, user){
         if(err){
@@ -66,28 +66,38 @@ router.get('/profile', passport.authenticate('jwt', {session: false}) ,function(
 });
 
 router.post('/delete', passport.authenticate('jwt', {session: false}) ,function(req, res, next){
-    //res.json({user: req.user});
-    User.getUserByUserName(req.user.username, function(err, deletedUser){
-        console.log(deletedUser);
-        deletedUser.remove(function (err, removed) {
-            if(err){
-                res.json({
-                    success: false, msg: "Failed to update user"
-                });
-            }
-            else{
-                res.json({
-                    success: true, msg: "User deleted"
-                })
-            }
-        });
+    var user;
+    if(req.user.permission == "admin"){
+        user = req.body;
+    } else {
+        user = req.user;
+    }
+    User.getUserByUserName(user.username, function (err, deletedUser) {
+        if(deletedUser == null){
+            res.json({
+                success: false, msg: "User has not been found"
+            });
+        }
+        else {
+            deletedUser.remove(function (err, removed) {
+                console.log("pam, pam");
+                if (err) {
+                    res.json({
+                        success: false, msg: "Failed to delete user"
+                    });
+                }
+                else {
+                    res.json({
+                        success: true, msg: "User has been deleted", user: removed
+                    })
+                }
+            });
+        }
     });
 });
 
 router.post('/update', passport.authenticate('jwt', {session: false}) ,function(req, res, next){
     User.getUserByUserName(req.user.username, function(err, updatedUser){
-        console.log("req");
-        console.log(req.body.username);
         updatedUser._id = req.user._id;
         updatedUser.name = req.body.name;
         updatedUser.username = req.body.username;
@@ -114,7 +124,9 @@ router.get('/getAllUsers', passport.authenticate('jwt', {session: false}) ,funct
         User.find({})
             .then(function (users)
             {
-                res.json(users);
+                res.json({
+                    success: true, msg: "Users were sent", users: users
+                });
 
             }, function (err) {
                 next(err)
