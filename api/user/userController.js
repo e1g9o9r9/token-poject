@@ -11,7 +11,7 @@ router.post('/register', function(req, res, next){
         email: req.body.email,
         username: req.body.username,
         password: req.body.password,
-        permission: "admin"
+        permission: "user"
     });
     User.addOrUpdateUser(newUser, function(err, user){
         if(err){
@@ -80,7 +80,6 @@ router.post('/delete', passport.authenticate('jwt', {session: false}) ,function(
         }
         else {
             deletedUser.remove(function (err, removed) {
-                console.log("pam, pam");
                 if (err) {
                     res.json({
                         success: false, msg: "Failed to delete user"
