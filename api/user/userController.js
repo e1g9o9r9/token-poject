@@ -4,13 +4,17 @@ const User = require('./userModel');
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const config = require('../../config/database');
+const dateFormat = require('dateformat');
 
 router.post('/register', function(req, res, next){
+    const date = dateFormat(new Date());
     var newUser = new User({
         name: req.body.name,
         email: req.body.email,
         username: req.body.username,
         password: req.body.password,
+        created: date,
+        modified: date,
         permission: "user"
     });
     User.addOrUpdateUser(newUser, function(err, user){
@@ -25,6 +29,7 @@ router.post('/register', function(req, res, next){
             })
         }
     });
+
 });
 
 router.post('/authenticate', function(req, res, next){
@@ -49,7 +54,9 @@ router.post('/authenticate', function(req, res, next){
                         name: user.name,
                         username: user.username,
                         email: user.email,
-                        permission: user.permission
+                        permission: user.permission,
+                        created: user.created,
+                        modified: user.modified
                     }
 
                 });
@@ -103,6 +110,8 @@ router.post('/update', passport.authenticate('jwt', {session: false}) ,function(
         updatedUser.password = req.body.password;
         updatedUser.permission = req.user.permission;
         updatedUser.email = req.body.email;
+        updatedUser.created = req.user.created;
+        updatedUser.modified = dateFormat(new Date());
         User.addOrUpdateUser(updatedUser, function(err, user){
             if(err){
                 res.json({

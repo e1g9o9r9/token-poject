@@ -128,7 +128,8 @@ var appRoutes = [
     { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_11__components_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */]] },
     { path: 'actions/update', component: __WEBPACK_IMPORTED_MODULE_18__components_userActions_update_update_component__["a" /* UpdateComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */]] },
     { path: 'actions/allUsers', component: __WEBPACK_IMPORTED_MODULE_12__components_userActions_all_users_all_users_component__["a" /* AllUsersComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'messages', component: __WEBPACK_IMPORTED_MODULE_13__components_message_message_component__["a" /* MessageComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */]] }
+    { path: 'messages', component: __WEBPACK_IMPORTED_MODULE_13__components_message_message_component__["a" /* MessageComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: ':anotherUrl', redirectTo: '/', pathMatch: 'full' }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -225,7 +226,7 @@ module.exports = ""
 /***/ "./src/app/components/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"jumbotron text-center\">\n  <h1>The School App</h1>\n  <p class=\"lead\">Welcome to our custom MEAN authentication application built from scratch</p>\n  <div>\n    <a class=\"btn btn-primary\" [routerLink]=\"['/register']\">Register</a> <a class=\"btn btn-default\" [routerLink]=\"['/login']\">Login</a>\n  </div>\n</div>\n\n<div class=\"row\">\n  <div class=\"col-md-4\">\n    <h3>Express Backend</h3>\n    <p>A rock solid Node.js/Express server using Mongoose to organize models and query the database</p>\n  </div>\n  <div class=\"col-md-4\">\n    <h3>Angular-CLI</h3>\n    <p>Angular-CLI to generate components, services and more. Local dev server and easy compilation</p>\n  </div>\n  <div class=\"col-md-4\">\n    <h3>JWT Tokens</h3>\n    <p>Full featured authentication using JSON web tokens. Login and store user data</p>\n  </div>\n</div>\n\n"
+module.exports = "\n<div class=\"jumbotron text-center\">\n  <h1>The School App</h1>\n  <p class=\"lead\">Welcome to some description of my project</p>\n  <div>\n    <a *ngIf =\"!authService.loggedIn()\" class=\"btn btn-primary\" [routerLink]=\"['/register']\">Register</a>\n    <a *ngIf =\"!authService.loggedIn()\" class=\"btn btn-default\" [routerLink]=\"['/login']\">Login</a>\n  </div>\n</div>\n\n<div class=\"row\">\n  <div class=\"col-md-4\">\n    <h3>Express Backend</h3>\n    <p>A rock solid Node.js/Express server using Mongoose to organize models and query the database</p>\n  </div>\n  <div class=\"col-md-4\">\n    <h3>Angular-CLI</h3>\n    <p>Angular-CLI to generate components, services and more.</p>\n  </div>\n  <div class=\"col-md-4\">\n    <h3>JWT Tokens</h3>\n    <p>Full featured authentication using JSON web tokens. Login and store user data</p>\n  </div>\n</div>\n\n"
 
 /***/ }),
 
@@ -235,6 +236,7 @@ module.exports = "\n<div class=\"jumbotron text-center\">\n  <h1>The School App<
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_auth_service__ = __webpack_require__("./src/app/services/auth/auth.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -245,8 +247,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var HomeComponent = /** @class */ (function () {
-    function HomeComponent() {
+    function HomeComponent(authService) {
+        this.authService = authService;
     }
     HomeComponent.prototype.ngOnInit = function () {
     };
@@ -256,7 +260,7 @@ var HomeComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/components/home/home.component.html"),
             styles: [__webpack_require__("./src/app/components/home/home.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_auth_service__["a" /* AuthService */]])
     ], HomeComponent);
     return HomeComponent;
 }());
@@ -324,7 +328,7 @@ var LoginComponent = /** @class */ (function () {
                 _this.authService.storeUserData(data.token, data.user);
                 _this.messageService.addMessage('Logging in').subscribe();
                 _this.flashMessage.show('You have been logged in', { cssClass: 'alert-success', timeout: 3000 });
-                _this.router.navigate(['dashboard']);
+                _this.router.navigate(['']);
             }
             else {
                 _this.flashMessage.show(data.msg, { cssClass: 'alert-danger', timeout: 3000 });
@@ -472,7 +476,7 @@ module.exports = ""
 /***/ "./src/app/components/navbar/navbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<nav class=\"navbar navbar-default\">\r\n  <div class=\"container\">\r\n    <div class=\"navbar-header\">\r\n      <a class=\"navbar-brand\" href=\"#\">MEAN Auth App</a>\r\n    </div>\r\n    <div id=\"navbar\" class=\"collapse navbar-collapse\">\r\n      <ul class=\"nav navbar-nav navbar-left\">\r\n        <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/']\">Home</a></li>\r\n      </ul>\r\n\r\n      <ul class=\"nav navbar-nav navbar-right\">\r\n        <li *ngIf =\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/dashboard']\">Dashboard</a></li>\r\n        <li class=\"dropdown\" *ngIf =\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\r\n          <a  class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\">Actions<span class=\"caret\"></span></a>\r\n          <ul class=\"dropdown-menu\" role=\"menu\">\r\n            <li><a [routerLink]=\"['/actions/update']\">Update info</a ></li>\r\n            <li *ngIf=\"authService.getUser().permission == 'admin' \"><a [routerLink]=\"['/actions/allUsers']\">Show all users</a></li>\r\n            <li><a [routerLink]=\"['/profile']\">Profile</a></li>\r\n          </ul>\r\n        </li>\r\n        <li *ngIf =\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/profile']\">Profile</a></li>\r\n        <li *ngIf =\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/login']\">Login</a></li>\r\n        <li *ngIf =\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/register']\">Register</a></li>\r\n        <li *ngIf =\"authService.loggedIn()\"><a (click)=\"onLogoutClick()\" [routerLink]=\"['/login']\">Logout</a></li>\r\n      </ul>\r\n    </div><!--/.nav-collapse -->\r\n  </div>\r\n</nav>\r\n"
+module.exports = "\r\n<nav class=\"navbar navbar-default\">\r\n  <div class=\"container\">\r\n    <div class=\"navbar-header\">\r\n      <a class=\"navbar-brand\" href=\"#\">School Project</a>\r\n    </div>\r\n    <div id=\"navbar\" class=\"collapse navbar-collapse\">\r\n      <ul class=\"nav navbar-nav navbar-left\">\r\n        <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/']\">Home</a></li>\r\n      </ul>\r\n\r\n      <ul class=\"nav navbar-nav navbar-right\">\r\n        <li *ngIf =\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/messages']\">History</a></li>\r\n        <li class=\"dropdown\" *ngIf =\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\r\n          <a  class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\">Actions<span class=\"caret\"></span></a>\r\n          <ul class=\"dropdown-menu\" role=\"menu\">\r\n            <li><a [routerLink]=\"['/actions/update']\">Update info</a ></li>\r\n            <li *ngIf=\"authService.getUser().permission == 'admin' \"><a [routerLink]=\"['/actions/allUsers']\">Show all users</a></li>\r\n            <li><a [routerLink]=\"['/profile']\">Profile</a></li>\r\n          </ul>\r\n        </li>\r\n        <li *ngIf =\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/profile']\">Profile</a></li>\r\n        <li *ngIf =\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/login']\">Login</a></li>\r\n        <li *ngIf =\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/register']\">Register</a></li>\r\n        <li *ngIf =\"authService.loggedIn()\"><a (click)=\"onLogoutClick()\" [routerLink]=\"['/login']\">Logout</a></li>\r\n      </ul>\r\n    </div><!--/.nav-collapse -->\r\n  </div>\r\n</nav>\r\n"
 
 /***/ }),
 
@@ -546,7 +550,7 @@ module.exports = ""
 /***/ "./src/app/components/profile/profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div  *ngIf=\"user\">\n  <h2 class=\"page-header\">{{user.name}}</h2>\n  <ul class=\"list-group\">\n    <li class=\"list-group-item\">Username: {{user.username}}</li>\n    <li class=\"list-group-item\">Email: {{user.email}}</li>\n  </ul>\n</div>\n"
+module.exports = "<div  *ngIf=\"user\">\n  <h2 class=\"page-header\">{{user.name}}</h2>\n  <ul class=\"list-group\">\n    <li class=\"list-group-item\">Username: {{user.username}}</li>\n    <li class=\"list-group-item\">Email: {{user.email}}</li>\n    <li class=\"list-group-item\">Registration date: {{user.created}}</li>\n  </ul>\n</div>\n"
 
 /***/ }),
 
@@ -675,9 +679,8 @@ var RegisterComponent = /** @class */ (function () {
         var success = false; //to check if user registered
         //Register user
         this.authService.registerUser(user).subscribe(function (data) {
-            success = data.success;
             if (data.success) {
-                _this.flashMessage.show('You have been registered and can log in', { cssClass: 'alert-success', timeout: 3000 });
+                _this.flashMessage.show('You have been registered', { cssClass: 'alert-success', timeout: 3000 });
                 _this.router.navigate(['/login']);
             }
             else {
@@ -713,7 +716,7 @@ module.exports = ""
 /***/ "./src/app/components/userActions/all-users/all-users.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div  *ngIf=\"users.length > 1\">\n  <h1 class=\"page-header\">All registered user</h1>\n  <table class=\"table table-striped table-hover \">\n  <thead>\n  <tr>\n    <th>#</th>\n    <th>Name</th>\n    <th>Username</th>\n    <th>Email</th>\n    <th>Permission</th>\n    <th></th>\n  </tr>\n  </thead>\n    <tbody>\n    <tr *ngFor=\"let user of users\" class=\"active\">\n      <td>{{users.indexOf(user) + 1}}</td>\n      <td>{{user.name}}</td>\n      <td>{{user.username}}</td>\n      <td>{{user.email}}</td>\n      <td>{{user.permission}}</td>\n      <td><button (click)=\"deleteUser(user)\" class=\"btn btn-default\">Delete</button></td>\n    </tr>\n    </tbody>\n  </table>\n</div>\n<div  *ngIf=\"!(users.length > 1)\">\n  <h1 class=\"page-header\">Nobody has been registered yet</h1>\n</div>\n\n"
+module.exports = "<div  *ngIf=\"users.length > 1\">\n  <h1 class=\"page-header\">All registered users</h1>\n  <table class=\"table table-striped table-hover \">\n  <thead>\n  <tr>\n    <th>#</th>\n    <th>Name</th>\n    <th>Username</th>\n    <th>Email</th>\n    <th>Permission</th>\n    <th></th>\n  </tr>\n  </thead>\n    <tbody>\n    <tr *ngFor=\"let user of users\" class=\"active\">\n      <td>{{users.indexOf(user) + 1}}</td>\n      <td>{{user.name}}</td>\n      <td>{{user.username}}</td>\n      <td>{{user.email}}</td>\n      <td>{{user.permission}}</td>\n      <td><button (click)=\"deleteUser(user)\" class=\"btn btn-default\">Delete</button></td>\n    </tr>\n    </tbody>\n  </table>\n</div>\n<div  *ngIf=\"!(users.length > 1)\">\n  <h1 class=\"page-header\">Nobody has been registered yet</h1>\n</div>\n\n"
 
 /***/ }),
 
@@ -1240,10 +1243,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var ValidateService = /** @class */ (function () {
     function ValidateService() {
     }
+    //To check if all fields of the form were filled
     ValidateService.prototype.validateForm = function (user) {
         return !(user.name == undefined || user.email == undefined || user.username == undefined || user.password == undefined) &&
             !(user.name == '' || user.email == '' || user.username == '' || user.password == '');
     };
+    // To check if an email putted correctly
     ValidateService.prototype.validateEmail = function (email) {
         var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(email);

@@ -20,6 +20,12 @@ const UserSchema = mongoose.Schema({
     },
     permission: {
         type: String
+    },
+    created: {
+        type: String
+    },
+    modified: {
+        type: String
     }
 });
 
