@@ -3,7 +3,7 @@ const controller = require('./userController');
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 
-//router.get('/profile', require('./userController').me);
+router.post('/register', controller.register);
 // router.post('/authenticate', controller.authenticate);
 // router.post('/register',controller.register);
 // router.post('/delete',passport.authenticate('jwt', {session: false}),controller.delete);

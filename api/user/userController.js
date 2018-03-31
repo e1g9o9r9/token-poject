@@ -17,7 +17,7 @@ router.post('/register', function(req, res, next){
         modified: date,
         permission: "user"
     });
-    User.addOrUpdateUser(newUser, function(err, user){
+    User.addUserOrChangePassword(newUser, function(err, user){
         if(err){
             res.json({
                 success: false, msg: "Failed to register user"
@@ -80,10 +80,9 @@ router.post('/delete', passport.authenticate('jwt', {session: false}) ,function(
         user = req.user;
     }
     User.getUserByUserName(user.username, function (err, deletedUser) {
-        if(deletedUser == null){
-            res.json({
-                success: false, msg: "User has not been found"
-            });
+        if(err) throw err;
+        if(!deletedUser){
+            return res.json({success: false, msg: 'User not found'});
         }
         else {
             deletedUser.remove(function (err, removed) {
@@ -104,15 +103,15 @@ router.post('/delete', passport.authenticate('jwt', {session: false}) ,function(
 
 router.post('/update', passport.authenticate('jwt', {session: false}) ,function(req, res, next){
     User.getUserByUserName(req.user.username, function(err, updatedUser){
-        updatedUser._id = req.user._id;
+        if(err) throw err;
+        if(!updatedUser){
+            return res.json({success: false, msg: 'User not found'});
+        }
         updatedUser.name = req.body.name;
         updatedUser.username = req.body.username;
-        updatedUser.password = req.body.password;
-        updatedUser.permission = req.user.permission;
         updatedUser.email = req.body.email;
-        updatedUser.created = req.user.created;
         updatedUser.modified = dateFormat(new Date());
-        User.addOrUpdateUser(updatedUser, function(err, user){
+        updatedUser.save(updatedUser, function(err, user){
             if(err){
                 res.json({
                     success: false, msg: "Failed to update user"
@@ -124,6 +123,38 @@ router.post('/update', passport.authenticate('jwt', {session: false}) ,function(
                 })
             }
         });
+    });
+});
+
+router.post('/changePassword', passport.authenticate('jwt', {session: false}) ,function(req, res, next){
+    User.getUserByUserName(req.user.username, function(err, updatedUser){
+        if(err) throw err;
+        if(!updatedUser){
+            return res.json({success: false, msg: 'User not found'});
+        }
+        const oldPassword = req.body.oldPassword;
+        const newPassword = req.body.newPassword;
+        User.comparePassword(oldPassword, updatedUser.password, function(err, isMatch){
+            if(err) throw err;
+            updatedUser.password = newPassword;
+            if(isMatch){
+                User.addUserOrChangePassword(updatedUser, function(err, user){
+                    if(err){
+                        res.json({
+                            success: false, msg: "Failed to change password"
+                        });
+                    }
+                    else{
+                        res.json({
+                            success: true, msg: "The password has been changed"
+                        })
+                    }
+                });
+            }
+            else {
+                res.json({success: false, msg: 'Wrong password'});
+            }
+        })
     });
 });
 
@@ -146,8 +177,26 @@ router.get('/getAllUsers', passport.authenticate('jwt', {session: false}) ,funct
     }
 });
 
-    // router.get('/validate', function(req, res, next){
-//     res.send('VALIDATE');
-// });
+
+router.get('/:username', passport.authenticate('jwt', {session: false}), function(req, res, next){
+    if(req.user.permission === "admin"){
+        User.getUserByUserName(req.params.username, function (err, expectedUser){
+            if(err) throw err;
+            if(!expectedUser){
+                res.json({success: false, msg: 'User not found'});
+            }
+            else{
+                res.json({
+                    success: true, user: expectedUser
+                });
+            }
+        });
+    }
+    else {
+        res.json({
+            success: true, msg: 'You do not have a permission'
+        });
+    }
+} );
 
 module.exports = router;

@@ -41,7 +41,18 @@ module.exports.getUserByUserName = function(username, callback){
     User.findOne(query, callback);
 };
 
-module.exports.addOrUpdateUser = function(newUser, callback){
+module.exports.hashPassword = function (user) {
+    bcrypt.genSalt(10, function(err, salt){
+        console.log(newUser.password);
+        bcrypt.hash(newUser.password, salt,  function(err, hash){
+            if(err) throw err;
+            newUser.password = hash;
+            newUser.save(callback);
+        });
+    });
+};
+
+module.exports.addUserOrChangePassword = function(newUser, callback){
      bcrypt.genSalt(10, function(err, salt){
          console.log(newUser.password);
          bcrypt.hash(newUser.password, salt,  function(err, hash){

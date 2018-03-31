@@ -1,6 +1,6 @@
-var morgan = require('morgan');
-var bodyParser = require('body-parser');
-var cors = require('cors');
+const morgan = require('morgan');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 
 module.exports = function (app) {
     app.use(morgan('dev'));

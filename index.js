@@ -1,13 +1,9 @@
 const express = require('express');
 const path = require('path');
-const bodyParser = require('body-parser');
-const cors = require('cors');
 const passport = require('passport');
 const mongoose = require('mongoose');
 const config = require('./config/database');
-//const users= require('./api/user/userRoutes');
 const api = require('./api');
-
 const app = express();
 const port = process.env.PORT || 3200;
 
@@ -25,18 +21,17 @@ mongoose.connection.on('error', function(err){
     console.log('DATABASE AN ERROR ', config.database);
 });
 
-
+//To get server data
 app.use('/api', api);
 
-//app.use(cors());
 //set static folder
-
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', function(req, res){
-    res.send("Invalid Endpoint");
-});
+// app.get('/', function(req, res){
+//     res.send("Invalid Endpoint");
+// });
 
+//The rest urls that dont relates to server data
 app.get('*', function(req, res){
     res.sendFile(path.join(__dirname, 'public/index.html'));
 });
@@ -45,12 +40,6 @@ app.get('*', function(req, res){
 app.listen(port, function(){
     console.log("Server started on port " + port);
 });
-
-//app.use(bodyParser.json());
-
-// require('./config/passport')(passport);
-// app.use(passport.initialize());
-// app.use(passport.session());
 
 
 
