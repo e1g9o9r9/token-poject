@@ -484,7 +484,7 @@ module.exports = ""
 /***/ "./src/app/components/navbar/navbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default\">\r\n  <div class=\"container\">\r\n    <div class=\"navbar-header\">\r\n      <a class=\"navbar-brand\" href=\"#\">School Project</a>\r\n    </div>\r\n    <div id=\"navbar\" class=\"collapse navbar-collapse\">\r\n      <ul class=\"nav navbar-nav navbar-left\">\r\n        <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/']\">Home</a></li>\r\n      </ul>\r\n      <ul class=\"nav navbar-nav navbar-right\">\r\n        <li *ngIf =\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/messages']\">History</a></li>\r\n        <li class=\"dropdown\" *ngIf =\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\r\n          <a  class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\">Actions<span class=\"caret\"></span></a>\r\n          <ul class=\"dropdown-menu\" role=\"menu\">\r\n            <li><a [routerLink]=\"['/actions/update']\">Update info</a ></li>\r\n            <li *ngIf=\"authService.getUser().permission == 'admin' \"><a [routerLink]=\"['/actions/allUsers']\">Show all users</a></li>\r\n            <li><a [routerLink]=\"['/actions/change']\">Change password</a></li>\r\n          </ul>\r\n        </li>\r\n        <li *ngIf =\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/profile']\">Profile</a></li>\r\n        <li *ngIf =\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/login']\">Login</a></li>\r\n        <li *ngIf =\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/register']\">Register</a></li>\r\n        <li *ngIf =\"authService.loggedIn()\"><a (click)=\"onLogoutClick()\" [routerLink]=\"['/login']\">Logout</a></li>\r\n      </ul>\r\n    </div>\r\n  </div>\r\n</nav>\r\n"
+module.exports = "<nav class=\"navbar navbar-default\">\r\n  <div class=\"container\">\r\n    <div class=\"navbar-header\">\r\n      <a class=\"navbar-brand\" href=\"home\">School Project</a>\r\n    </div>\r\n    <div id=\"navbar\" class=\"collapse navbar-collapse\">\r\n      <ul class=\"nav navbar-nav navbar-left\">\r\n        <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/home']\">Home</a></li>\r\n      </ul>\r\n      <ul class=\"nav navbar-nav navbar-right\">\r\n        <li *ngIf =\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/messages']\">History</a></li>\r\n        <li class=\"dropdown\" *ngIf =\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\r\n          <a  class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\">Actions<span class=\"caret\"></span></a>\r\n          <ul class=\"dropdown-menu\" role=\"menu\">\r\n            <li><a [routerLink]=\"['/actions/update']\">Update info</a ></li>\r\n            <li><a [routerLink]=\"['/actions/change']\">Change password</a></li>\r\n            <li *ngIf=\"authService.getUser().permission == 'admin' \"><a [routerLink]=\"['/actions/allUsers']\">Show all users</a></li>\r\n          </ul>\r\n        </li>\r\n        <li *ngIf =\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/profile']\">Profile</a></li>\r\n        <li *ngIf =\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/login']\">Login</a></li>\r\n        <li *ngIf =\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/register']\">Register</a></li>\r\n        <li *ngIf =\"authService.loggedIn()\"><a (click)=\"onLogoutClick()\" [routerLink]=\"['/login']\">Logout</a></li>\r\n      </ul>\r\n    </div>\r\n  </div>\r\n</nav>\r\n"
 
 /***/ }),
 
@@ -772,6 +772,15 @@ var AllUsersComponent = /** @class */ (function () {
         this.userService.getAllUser().subscribe(function (data) {
             if (data.success) {
                 _this.users = data.users;
+                //sorting a list of users by alphabet
+                _this.users.sort(function (user1, user2) {
+                    var un1 = user1.username, un2 = user2.username;
+                    if (un1 > un2)
+                        return 1;
+                    else if (un1 < un2)
+                        return -1;
+                    return 0;
+                });
             }
             else {
                 _this.users = [];
@@ -1068,7 +1077,7 @@ var UpdateComponent = /** @class */ (function () {
         this.name = this.oldUser.name;
         this.username = this.oldUser.username;
         this.email = this.oldUser.email;
-        this.isActive = [true, true, true];
+        this.isActive = [false, false, false];
     };
     UpdateComponent.prototype.getANewUser = function () {
         var result = [];
@@ -1462,7 +1471,7 @@ var UserService = /** @class */ (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Authorization', this.authService.getToken());
         headers.append('Content-Type', 'application/json');
-        return this.http.post('http://localhost:3200/api/user/update', user, { headers: headers })
+        return this.http.post('/api/user/update', user, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     UserService.prototype.getAllUser = function () {

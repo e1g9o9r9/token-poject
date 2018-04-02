@@ -4,17 +4,9 @@
     <list default="true" id="a2d41085-df68-4146-9898-f5aa2745ad27" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/school-prohect" afterPath="$PROJECT_DIR$/school-prohect" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/user/userController.js" afterPath="$PROJECT_DIR$/api/user/userController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/user/userModel.js" afterPath="$PROJECT_DIR$/api/user/userModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/user/userRoutes.js" afterPath="$PROJECT_DIR$/api/user/userRoutes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/database.js" afterPath="$PROJECT_DIR$/config/database.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/middleware/appMiddleware.js" afterPath="$PROJECT_DIR$/middleware/appMiddleware.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/inline.bundle.js.map" afterPath="$PROJECT_DIR$/public/inline.bundle.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/main.bundle.js" afterPath="$PROJECT_DIR$/public/main.bundle.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/main.bundle.js.map" afterPath="$PROJECT_DIR$/public/main.bundle.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendor.bundle.js" afterPath="$PROJECT_DIR$/public/vendor.bundle.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,18 +23,48 @@
       <file leaf-file-name="user.service.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/school-prohect/src/app/services/user/user.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
+            <state relative-caret-position="320">
               <caret line="46" column="27" lean-forward="false" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="message.service.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/school-prohect/src/app/services/message/message.service.ts">
+      <file leaf-file-name="userController.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/api/user/userController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="47">
-              <caret line="14" column="27" lean-forward="false" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+            <state relative-caret-position="289">
+              <caret line="17" column="25" lean-forward="false" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="navbar.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/school-prohect/src/app/components/navbar/navbar.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="40" lean-forward="false" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="all-users.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/school-prohect/src/app/components/userActions/all-users/all-users.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="array.service.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/school-prohect/src/app/services/array/array.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="3" lean-forward="false" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -51,18 +73,38 @@
       <file leaf-file-name="auth.service.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/school-prohect/src/app/services/auth/auth.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-548">
-              <caret line="16" column="27" lean-forward="false" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+            <state relative-caret-position="68">
+              <caret line="31" column="27" lean-forward="false" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="array.service.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/school-prohect/src/app/services/array/array.service.ts">
+      <file leaf-file-name="message.service.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/school-prohect/src/app/services/message/message.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state relative-caret-position="404">
+              <caret line="38" column="26" lean-forward="false" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="all-users.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/school-prohect/src/app/components/userActions/all-users/all-users.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="31" column="28" lean-forward="false" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="update.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/school-prohect/src/app/components/userActions/update/update.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="646">
+              <caret line="44" column="5" lean-forward="false" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -102,16 +144,13 @@
         <option value="$PROJECT_DIR$/api/user/userModel.js" />
         <option value="$PROJECT_DIR$/school-prohect/src/app/services/validate/validate.service.ts" />
         <option value="$PROJECT_DIR$/school-prohect/src/app/components/login/login.component.ts" />
-        <option value="$PROJECT_DIR$/school-prohect/src/app/components/userActions/update/update.component.ts" />
         <option value="$PROJECT_DIR$/school-prohect/src/app/components/userActions/change-password/change-password.component.ts" />
         <option value="$PROJECT_DIR$/school-prohect/src/app/components/userActions/change-password/change-password.component.html" />
-        <option value="$PROJECT_DIR$/school-prohect/src/app/components/navbar/navbar.component.html" />
         <option value="$PROJECT_DIR$/school-prohect/src/index.html" />
         <option value="$PROJECT_DIR$/school-prohect/src/app/app.component.html" />
         <option value="$PROJECT_DIR$/school-prohect/src/app/components/userActions/update/update.component.html" />
         <option value="$PROJECT_DIR$/school-prohect/src/app/components/message/message.component.ts" />
         <option value="$PROJECT_DIR$/school-prohect/src/app/components/message/message.component.html" />
-        <option value="$PROJECT_DIR$/school-prohect/src/app/services/array/array.service.ts" />
         <option value="$PROJECT_DIR$/api/user/userRoutes.js" />
         <option value="$PROJECT_DIR$/api.js" />
         <option value="$PROJECT_DIR$/index.js" />
@@ -119,15 +158,18 @@
         <option value="$PROJECT_DIR$/config/database.js" />
         <option value="$PROJECT_DIR$/school-prohect/src/app/guards/auth.guard.ts" />
         <option value="$PROJECT_DIR$/school-prohect/src/app/guards/admin.guard.ts" />
-        <option value="$PROJECT_DIR$/school-prohect/src/app/components/userActions/all-users/all-users.component.ts" />
-        <option value="$PROJECT_DIR$/api/user/userController.js" />
-        <option value="$PROJECT_DIR$/school-prohect/src/app/components/userActions/all-users/all-users.component.html" />
         <option value="$PROJECT_DIR$/school-prohect/src/app/components/userActions/specific-user/specific-user.component.ts" />
         <option value="$PROJECT_DIR$/school-prohect/src/app/components/userActions/specific-user/specific-user.component.html" />
         <option value="$PROJECT_DIR$/school-prohect/src/app/app.module.ts" />
-        <option value="$PROJECT_DIR$/school-prohect/src/app/services/user/user.service.ts" />
-        <option value="$PROJECT_DIR$/school-prohect/src/app/services/message/message.service.ts" />
+        <option value="$PROJECT_DIR$/school-prohect/src/app/components/userActions/update/update.component.ts" />
+        <option value="$PROJECT_DIR$/school-prohect/src/app/services/array/array.service.ts" />
+        <option value="$PROJECT_DIR$/school-prohect/src/app/components/userActions/all-users/all-users.component.ts" />
+        <option value="$PROJECT_DIR$/school-prohect/src/app/components/navbar/navbar.component.html" />
+        <option value="$PROJECT_DIR$/school-prohect/src/app/components/userActions/all-users/all-users.component.html" />
         <option value="$PROJECT_DIR$/school-prohect/src/app/services/auth/auth.service.ts" />
+        <option value="$PROJECT_DIR$/school-prohect/src/app/services/message/message.service.ts" />
+        <option value="$PROJECT_DIR$/school-prohect/src/app/services/user/user.service.ts" />
+        <option value="$PROJECT_DIR$/api/user/userController.js" />
       </list>
     </option>
   </component>
@@ -181,110 +223,12 @@
               <item name="api" type="462c0819:PsiDirectoryNode" />
               <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="node-js-getting-started" type="b2602c69:ProjectViewProjectNode" />
-              <item name="node-js-getting-started" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="node-js-getting-started" type="b2602c69:ProjectViewProjectNode" />
-              <item name="node-js-getting-started" type="462c0819:PsiDirectoryNode" />
-              <item name="middleware" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="node-js-getting-started" type="b2602c69:ProjectViewProjectNode" />
-              <item name="node-js-getting-started" type="462c0819:PsiDirectoryNode" />
-              <item name="school-prohect" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="node-js-getting-started" type="b2602c69:ProjectViewProjectNode" />
-              <item name="node-js-getting-started" type="462c0819:PsiDirectoryNode" />
-              <item name="school-prohect" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="node-js-getting-started" type="b2602c69:ProjectViewProjectNode" />
-              <item name="node-js-getting-started" type="462c0819:PsiDirectoryNode" />
-              <item name="school-prohect" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="node-js-getting-started" type="b2602c69:ProjectViewProjectNode" />
-              <item name="node-js-getting-started" type="462c0819:PsiDirectoryNode" />
-              <item name="school-prohect" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="node-js-getting-started" type="b2602c69:ProjectViewProjectNode" />
-              <item name="node-js-getting-started" type="462c0819:PsiDirectoryNode" />
-              <item name="school-prohect" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="navbar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="node-js-getting-started" type="b2602c69:ProjectViewProjectNode" />
-              <item name="node-js-getting-started" type="462c0819:PsiDirectoryNode" />
-              <item name="school-prohect" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="userActions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="node-js-getting-started" type="b2602c69:ProjectViewProjectNode" />
-              <item name="node-js-getting-started" type="462c0819:PsiDirectoryNode" />
-              <item name="school-prohect" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="node-js-getting-started" type="b2602c69:ProjectViewProjectNode" />
-              <item name="node-js-getting-started" type="462c0819:PsiDirectoryNode" />
-              <item name="school-prohect" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="array" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="node-js-getting-started" type="b2602c69:ProjectViewProjectNode" />
-              <item name="node-js-getting-started" type="462c0819:PsiDirectoryNode" />
-              <item name="school-prohect" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="node-js-getting-started" type="b2602c69:ProjectViewProjectNode" />
-              <item name="node-js-getting-started" type="462c0819:PsiDirectoryNode" />
-              <item name="school-prohect" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="message" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="node-js-getting-started" type="b2602c69:ProjectViewProjectNode" />
-              <item name="node-js-getting-started" type="462c0819:PsiDirectoryNode" />
-              <item name="school-prohect" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -367,12 +311,15 @@
       <workItem from="1522525113945" duration="1794000" />
       <workItem from="1522526921614" duration="1776000" />
       <workItem from="1522528753333" duration="1794000" />
-      <workItem from="1522530559492" duration="1517000" />
+      <workItem from="1522530559492" duration="1865000" />
+      <workItem from="1522577157659" duration="1583000" />
+      <workItem from="1522579052947" duration="1516000" />
+      <workItem from="1522666436923" duration="765000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70830000" />
+    <option name="totallyTimeSpent" value="75042000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -428,34 +375,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/school-prohect/src/app/components/userActions/all-users/all-users.component.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/school-prohect/src/app/components/register/register.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/school-prohect/src/app/components/dashboard/dashboard.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/school-prohect/src/app/components/message/message.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/school-prohect/src/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -598,16 +517,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/school-prohect/src/app/components/userActions/update/update.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="76" column="5" lean-forward="true" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#50#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/school-prohect/src/app/components/message/message.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="235">
@@ -633,7 +542,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="55" lean-forward="false" selection-start-line="6" selection-start-column="55" selection-end-line="6" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -662,7 +570,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="918">
           <caret line="54" column="38" lean-forward="false" selection-start-line="54" selection-start-column="15" selection-end-line="54" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -670,9 +577,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="6" column="70" lean-forward="false" selection-start-line="6" selection-start-column="70" selection-end-line="6" selection-end-column="70" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -680,17 +584,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="15" column="38" lean-forward="false" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/user/userController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="193" column="5" lean-forward="true" selection-start-line="193" selection-start-column="5" selection-end-line="193" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -698,10 +591,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-122">
           <caret line="37" column="88" lean-forward="false" selection-start-line="37" selection-start-column="88" selection-end-line="37" selection-end-column="88" />
-          <folding>
-            <element signature="e#269#316#0" expanded="true" />
-            <element signature="e#1150#1219#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -709,7 +598,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
           <caret line="40" column="71" lean-forward="false" selection-start-line="40" selection-start-column="71" selection-end-line="40" selection-end-column="71" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -717,7 +605,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="115" lean-forward="false" selection-start-line="9" selection-start-column="115" selection-end-line="9" selection-end-column="115" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -726,7 +613,7 @@
         <state relative-caret-position="408">
           <caret line="39" column="14" lean-forward="false" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="14" />
           <folding>
-            <element signature="e#0#50#0" expanded="true" />
+            <element signature="e#0#50#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -735,15 +622,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="71" lean-forward="false" selection-start-line="8" selection-start-column="71" selection-end-line="8" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/school-prohect/src/app/components/userActions/all-users/all-users.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="10" lean-forward="true" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="87" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -751,56 +629,87 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/school-prohect/src/app/components/userActions/update/update.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="44" column="5" lean-forward="false" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/main.bundle.js" />
+    <entry file="file://$PROJECT_DIR$/public/vendor.bundle.js" />
+    <entry file="file://$PROJECT_DIR$/public/vendor.bundle.js.map" />
+    <entry file="file://$PROJECT_DIR$/school-prohect/src/environments/environment.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/school-prohect/src/app/components/userActions/all-users/all-users.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="23" column="4" lean-forward="false" selection-start-line="23" selection-start-column="4" selection-end-line="35" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="425">
+          <caret line="31" column="28" lean-forward="false" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/school-prohect/src/app/components/navbar/navbar.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="53" />
+        <state relative-caret-position="51">
+          <caret line="3" column="40" lean-forward="false" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/school-prohect/src/app/services/user/user.service.ts">
+    <entry file="file://$PROJECT_DIR$/school-prohect/src/app/components/userActions/all-users/all-users.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="46" column="27" lean-forward="false" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/school-prohect/src/app/services/message/message.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="14" column="27" lean-forward="false" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/school-prohect/src/app/services/auth/auth.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-548">
-          <caret line="16" column="27" lean-forward="false" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+        <state relative-caret-position="476">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/school-prohect/src/app/services/array/array.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state relative-caret-position="221">
+          <caret line="13" column="3" lean-forward="false" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/school-prohect/src/app/services/auth/auth.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="31" column="27" lean-forward="false" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/school-prohect/src/app/services/message/message.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="38" column="26" lean-forward="false" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/school-prohect/src/app/services/user/user.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="46" column="27" lean-forward="false" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/user/userController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="25" lean-forward="false" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
           <folding />
         </state>
       </provider>
